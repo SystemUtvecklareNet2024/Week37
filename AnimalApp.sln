@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalApp", "AnimalApp\Anim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banken", "Banken\Banken.csproj", "{78B0E0DD-1E45-4060-B76B-97B539D39C41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
