@@ -5,9 +5,11 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalApp", "AnimalApp\AnimalApp.csproj", "{5D472AD5-DCFF-4D29-9BD4-AB1230A926A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shapes", "Shapes\Shapes.csproj", "{E1DD2907-D831-45BA-9C3B-E9B088A66CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banken", "Banken\Banken.csproj", "{78B0E0DD-1E45-4060-B76B-97B539D39C41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banken", "Banken\Banken.csproj", "{78B0E0DD-1E45-4060-B76B-97B539D39C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker\Poker.csproj", "{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B0E0DD-1E45-4060-B76B-97B539D39C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
