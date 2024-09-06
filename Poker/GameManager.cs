@@ -13,6 +13,7 @@ namespace Poker
         public Player player = new Player();
         private bool gameOver = false;
         private bool isHigher = true;
+        private int highScore = 0;
         public void StartGame()
         {
             gameOver = false;
@@ -33,22 +34,28 @@ namespace Poker
 
             while (!gameOver)
             {
+                
                 Console.Write($"Will the next card be higher or lower then: ");
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 deck.ShowTopCard();
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine();
 
                 Console.Write("Type 'H' or 'L' : ");
 
                 string? choice = Console.ReadLine().ToUpper();
 
+                Console.WriteLine();
                 Console.Write($"Your card is: ");
                 Console.ForegroundColor= ConsoleColor.Red;
                 player.Hand.Add(deck.DealPlayerCard());
-                //Console.WriteLine(deck.ShowTopCard());
+                
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine();
+                Console.WriteLine("press enter for result...");
+                Console.ReadLine();
+                Console.Clear();
 
                 if (choice == "H")
                 {
@@ -59,49 +66,73 @@ namespace Poker
                     CalculateScore(!isHigher);
                 }
             }
+
+            deck.ResetDeck();
         }
 
         private void CalculateScore(bool isHigher)
         {
             if (isHigher)
             {
+                
                 int playerValue = (int)(CardValue)player.Hand.Last().Value;
                 int thrownValue = (int)(CardValue)deck.ShowTopThrownCard().Value;
 
                 if (playerValue >= thrownValue)
                 {
                     player.Score += playerValue - thrownValue;
-                    Console.Clear ();
-                    Console.WriteLine("Correct!!");
+                    
+                    Console.WriteLine($"Correct!!! Your {player.Hand.Last().Value} was higher or the same as {deck.ShowTopThrownCard().Value}.");
                     Console.WriteLine("SCORE: " + player.Score);
+                    Console.WriteLine();
                 }
                 else
-                {
-                    Console.Clear();
+                {                    
                     Console.WriteLine("Game Over");
                     Console.WriteLine("SCORE: " + player.Score);
+                    Console.WriteLine();
                     gameOver = true;
+                    CheckIfNewHighScore();
                 }
             }
             else
             {
+                
                 int playerValue = (int)(CardValue)player.Hand.Last().Value;
                 int thrownValue = (int)(CardValue)deck.ShowTopThrownCard().Value;
 
                 if (playerValue <= thrownValue)
                 {
                     player.Score += thrownValue - playerValue;
-                    Console.WriteLine("Correct!!");
+                    Console.WriteLine($"Correct!! Your {player.Hand.Last().Value} was lower or the same as {deck.ShowTopThrownCard().Value}.");
                     Console.WriteLine("SCORE: " + player.Score);
+                    Console.WriteLine();
                 }
                 else
                 {
                     Console.WriteLine("Game Over");
                     Console.WriteLine("SCORE: " + player.Score);
+                    Console.WriteLine();
                     gameOver = true;
+                    CheckIfNewHighScore();
                 }
             }
         }
+
+        private void CheckIfNewHighScore()
+        {
+            if (player.Score > highScore)
+            {
+                highScore = player.Score;
+            }
+        }
+
+        public int GetHighScore()
+        {
+            return highScore;
+        }
+
+
 
     }
 }

@@ -16,7 +16,7 @@ namespace Poker
 
             while (!quit)
             {
-                string? choice = Menu();
+                string? choice = Menu(gameManager);
 
                 switch (choice)
                 {
@@ -40,11 +40,13 @@ namespace Poker
 
         }
 
-        private static string? Menu()
+        private static string? Menu(GameManager manager)
         {
             Console.WriteLine("----- Welcome to my Cardgame -----");
             Console.WriteLine("1. Start Game");
             Console.WriteLine("2. Quit");
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine($"Current highscore: {manager.GetHighScore()}");
             Console.WriteLine("----------------------------------");
             Console.Write    ("Enter choice: ");
             string? choice = Console.ReadLine();
