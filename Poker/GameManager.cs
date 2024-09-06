@@ -40,8 +40,8 @@ namespace Poker
                 Console.ForegroundColor = ConsoleColor.Red;
                 deck.ShowTopCard();
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine();
 
+                Console.WriteLine();
                 Console.Write("Type 'H' or 'L' : ");
 
                 string? choice = Console.ReadLine().ToUpper();
