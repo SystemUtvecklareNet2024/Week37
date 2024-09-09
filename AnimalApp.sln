@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banken", "Banken\Banken.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poker", "Poker\Poker.csproj", "{0EEF4231-475E-40BF-86AD-D7E0833C3B5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAccountsWIthBankAccount", "..\..\MultiplicationLoop\UserAccountsWIthBankAccount.csproj", "{C660284C-1B56-4F34-A039-63CF3A11C714}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAccountsWIthBankAccount", "MultiplicationLoop\UserAccountsWIthBankAccount.csproj", "{C660284C-1B56-4F34-A039-63CF3A11C714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
