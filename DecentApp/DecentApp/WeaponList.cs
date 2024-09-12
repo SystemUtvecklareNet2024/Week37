@@ -10,13 +10,14 @@ namespace DecentApp
     { 
         public List<Weapon> weapons;
 
-        public Weapon sword = new Weapon("Sword of Hercules", 4, 10);
+        public Weapon sword = new Weapon("Sword of Hercules", 4, 8);
         public Weapon dagger = new Weapon("Shiny dagger", 2, 7);
-        public Weapon axe = new Weapon("Axe of Thunder", 3, 8);
+        public Weapon axe = new Weapon("Axe of Thunder", 3, 2);
+        public Weapon dragonFire = new Weapon("Fiery Longsword", 7, 16);
 
         public WeaponList()
         {
-            weapons = new List<Weapon>() { sword, dagger, axe };
+            weapons = new List<Weapon>() { sword, dagger, axe, dragonFire };
         }
     }
 }

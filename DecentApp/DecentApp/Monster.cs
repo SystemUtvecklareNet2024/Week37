@@ -26,9 +26,9 @@ namespace DecentApp
             if (!IsDead())
             {
                 Random random = new Random();
-                int minValue = Weapon.MinDamage; // Ska man referera till monster minDamage eller monster vapen?
-                int maxValue = Weapon.MaxDamage; // Ska man referera till monster minDamage eller monster vapen?
-                int hitDamageMonster = random.Next(minValue, maxValue + 1); // +1 to include maxValue
+                int minValue = Weapon.MinDamage; 
+                int maxValue = Weapon.MaxDamage; 
+                int hitDamageMonster = random.Next(minValue, maxValue + 1);
                 character.Health = character.Health - hitDamageMonster;
                 Console.WriteLine($"{character.Name} lost {hitDamageMonster} and has {character.Health} HP remaining");
                 Thread.Sleep(500);

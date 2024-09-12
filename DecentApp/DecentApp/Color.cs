@@ -45,5 +45,12 @@ namespace DecentApp
             Console.Write(text);
             ResetColor();
         }
+
+        public void Cyan(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(text);
+            ResetColor();
+        }
     }
 }
