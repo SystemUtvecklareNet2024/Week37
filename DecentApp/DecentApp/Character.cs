@@ -52,7 +52,9 @@ namespace DecentApp
                 
                 Level += 1;
                 experience = 0;
-                Console.WriteLine("You are now level" + Level);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("You are now level " + Level + " and feel abit stronger");
+                Console.ForegroundColor= ConsoleColor.Green;
             }
         }
         public bool IsDead()

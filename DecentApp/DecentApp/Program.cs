@@ -16,26 +16,41 @@ namespace DecentApp
             Story story = new Story();
             Character player;
             Random random = new Random();
+            // Sätta lite färg på spelet enklare.
+            Color colorWrite = new Color(ConsoleColor.Green);
+
             bool playing = true;
             int storyCounter = 0;
 
             string gameNameText = "Descent";
 
+            // Sätter basfärgen i consolen.
+            colorWrite.ResetColor();
+
+            // Visar intro och meny för spelet.
             player = Menu();
 
             while (playing)
             {
                 Console.Clear();
-                // spela storyn
+
+                // Spela storyn
                 Console.WriteLine(story.storySentences[1]);
-                // Slumpa monster här.
-                
+
+                // Slumpa monster och ett vapen.
                 monster = monsterGenerator.monsters[random.Next(0, monsterGenerator.monsters.Count())];
                 monster.Weapon = weaponList.weapons[random.Next(0, weaponList.weapons.Count())];
                 player.Weapon = weaponList.dagger;
 
-                Console.WriteLine($"A {monster.Name} suddenly appears with a {monster.Weapon.Name} what do u do?\n");
+                //Console.WriteLine($"A {monster.Name} suddenly appears with a {monster.Weapon.Name} what do u do?\n");
+                colorWrite.Yellow("A ");
+                colorWrite.Blue(monster.Name);
+                colorWrite.Yellow(" suddenly appears with a ");
+                colorWrite.Blue(monster.Weapon.Name);
+                colorWrite.Yellow("! What do u do?\n");
 
+
+                // Continue or see score?
                 Console.WriteLine("(A) Attack.");
                 Console.WriteLine("(N) Go North.");
                 Console.WriteLine("(S) Go South.");
@@ -44,6 +59,7 @@ namespace DecentApp
                 Console.WriteLine();
                 Console.Write("Choice: ");
                 string choice = Console.ReadLine();
+                Console.WriteLine();
 
                 switch (choice)
                 {
@@ -81,37 +97,8 @@ namespace DecentApp
                         break;
                 }
 
-                storyCounter++;
-
-
-                // switch för händelser.
+                storyCounter++;                
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*while (true)
-            {
-                Console.WriteLine("nu startar spelet");
-                Console.ReadLine();
-
-                Console.WriteLine("{0, -100}", story.storySentences[0]);
-                Console.ReadLine();
-                Console.WriteLine(story.storySentences[1]);
-            }*/
 
             /*Console.Write(new string('-', 50));
             foreach (char letter in gameNameText)
@@ -121,34 +108,11 @@ namespace DecentApp
             }
             Thread.Sleep(1000);*/
 
-            //Character player = new Character("Stefan", 20);
-            /*Monster rat = new Monster(10, "Frodo");
-            rat.Weapon = weaponList.axe;
-            Console.WriteLine(rat.Weapon.MinDamage);*/
-            /*Console.WriteLine(player.Name);
-            rat.Weapon = weaponList.dagger;
-            //Console.WriteLine("rat sword min damage: " + rat.Weapon.MinDamage);
-            player.Weapon = weaponList.axe;
-            Console.WriteLine(player.Weapon.Name);*/
-
-            /*while (true)   // utför loopen så länge inte någon har 0 eller mindre HP
-            {
-                if (player.IsDead() || rat.IsDead())
-                {
-                    break;
-                }
-                else
-                {
-                    player.Attack(player, rat);    // anropar attackmetoden i Entity
-                    rat.Attack(player, rat);   // anropar attack metoden i Entit
-                }
-            }*/
-
-
         }
 
         private static string Encounter(Character player, Monster monster)
         {
+            Console.WriteLine("A fierce battle appears and ..");
             while(true)
             {
                 if (player.IsDead())
@@ -164,21 +128,23 @@ namespace DecentApp
                 }
                 else
                 {
-                    player.Attack(player, monster);    // anropar attackmetoden i Entity
-                    monster.Attack(player, monster);   // anropar attack metoden i Entit
+                    player.Attack(player, monster);
+                    monster.Attack(player, monster);
                 }
             }
         }
         private static Character Menu()
         {
             Character player;
-            Console.WriteLine(" ####  #####  #####  #####  #####  #   #  ##### ");
+            /*Console.WriteLine(" ####  #####  #####  #####  #####  #   #  ##### ");
             Console.WriteLine(" #   # #      #      #      #      ##  #    #   ");
             Console.WriteLine(" #   # #####  #####  #      #####  # # #    #   ");
             Console.WriteLine(" #   # #          #  #      #      #  ##    #   ");
             Console.WriteLine(" ####  #####  #####  #####  #####  #   #    #   ");
-            Console.WriteLine();
+            Console.WriteLine();*/
+            GameHeader();
 
+            Console.WriteLine();
             Console.WriteLine("Deep within the Forgotten Mountains lay the vast, eerie caverns known as Shadow Hollow, rumored to be home to ancient treasures and mysterious creatures. Among the most feared inhabitants were the intelligent, shadow-born rats, led by their enormous, scarred king, Gnash. These rats, with their glowing red eyes and cunning minds, waited patiently for humans to venture too far into their dark domain.");
             Console.WriteLine();
             Console.WriteLine("Press enter to start Adventure.");
@@ -188,6 +154,31 @@ namespace DecentApp
             string name = Console.ReadLine();
             player = new Character(name, 100);
             return player;
+        }
+
+        private static void GameHeader()
+        {
+            List<string> Header = new List<string>();
+            string decentHeader1 = " ####  #####  #####  #####  #####  #   #  ##### ";
+            string decentHeader2 = " #   # #      #      #      #      ##  #    #   ";
+            string decentHeader3 = " #   # #####  #####  #      #####  # # #    #   ";
+            string decentHeader4 = " #   # #          #  #      #      #  ##    #   ";
+            string decentHeader5 = " ####  #####  #####  #####  #####  #   #    #   ";
+            Header.Add(decentHeader1);
+            Header.Add(decentHeader2);
+            Header.Add(decentHeader3);
+            Header.Add(decentHeader4);
+            Header.Add(decentHeader5);
+
+            foreach (string header in Header)
+            {
+                for (int i = 0; header.Length > i; i++)
+                {
+                    Console.Write(header[i]);
+                    Thread.Sleep(30);
+                }
+                Console.WriteLine("");
+            }
         }
     }
 }
