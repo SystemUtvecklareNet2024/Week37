@@ -69,6 +69,7 @@ namespace UserAccountsWIthBankAccount
             }
 
             Console.ReadLine();
+
         }
 
         static void Withdraw()
@@ -82,7 +83,7 @@ namespace UserAccountsWIthBankAccount
 
             while (!valid)
             {
-                Console.Write("Wich user do you want to Withdraw from? Enter accountnumber: ");
+                Console.Write("Which user do you want to Withdraw from? Enter accountnumber: ");
                 try
                 {
                     accNumber = int.Parse(Console.ReadLine());

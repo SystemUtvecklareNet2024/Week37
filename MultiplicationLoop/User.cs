@@ -23,7 +23,6 @@ namespace UserAccountsWIthBankAccount
             Street = street;
             City = city;
             PostalCode = postalCode;
-        }
-        
+        }        
     }
 }
